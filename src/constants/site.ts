@@ -1,5 +1,7 @@
 export const SITE = {
   name: "Naturallis",
+  /** Public origin used for canonical URLs, sitemap and social cards. */
+  url: process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000",
   tagline: "Cuidado que respeita a individualidade",
   description:
     "Fórmulas manipuladas, suplementos e produtos selecionados para fazer parte da sua rotina de cuidado, com qualidade, orientação e atenção a cada detalhe.",
