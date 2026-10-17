@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 
-import { FormulaBenefits } from "@/components/sections/formulas/formula-benefits";
 import { FormulaFaq } from "@/components/sections/formulas/formula-faq";
 import { FormulaRequest } from "@/components/sections/formulas/formula-request";
 import { FormulaSteps } from "@/components/sections/formulas/formula-steps";
+import { HighlightsPanel } from "@/components/sections/highlights-panel";
 import { PageIntro } from "@/components/sections/page-intro";
+import { FORMULA_BENEFITS } from "@/constants/formulas";
 
 const LEAD =
   "Manipulamos a sua receita ou desenvolvemos, com orientação farmacêutica, uma fórmula pensada para a sua rotina.";
@@ -25,7 +26,11 @@ export default function FormulasPage() {
         image={{ src: "/images/product/bolhas.jpg", alt: "Textura de gel transparente com bolhas" }}
       />
       <FormulaSteps />
-      <FormulaBenefits />
+      <HighlightsPanel
+        id="formula-benefits"
+        title="Por que manipular sua fórmula"
+        items={FORMULA_BENEFITS}
+      />
       <FormulaRequest />
       <FormulaFaq />
     </main>
