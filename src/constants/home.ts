@@ -85,3 +85,38 @@ export const TRANSFORMATION_HIGHLIGHTS: readonly TransformationHighlight[] = [
     benefits: ["20 vitaminas e minerais essenciais", "Completa a rotina em uma cápsula ao dia"],
   },
 ];
+
+export type Testimonial = {
+  title: string;
+  quote: string;
+  poster: string;
+  avatar?: string;
+  /** Optional video file; the play control only renders when it exists. */
+  video?: string;
+};
+
+export const TESTIMONIALS: readonly Testimonial[] = [
+  {
+    title: "Atendimento da equipe.",
+    quote: "Depois de um mês, minha pele melhorou muito.",
+    poster: "/images/testimonials/atendimento.png",
+    avatar: "/images/testimonials/avatar-1.jpg",
+  },
+  {
+    title: "Clareza das informações.",
+    quote: "Todas as minhas marcas sumiram.",
+    poster: "/images/testimonials/clareza.png",
+    avatar: "/images/testimonials/avatar-2.jpg",
+  },
+  {
+    title: "Facilidade para fazer um pedido.",
+    quote: "Minha digestão melhorou e a pele acompanhou.",
+    poster: "/images/testimonials/pedido.png",
+    avatar: "/images/testimonials/avatar-3.jpg",
+  },
+  {
+    title: "Experiência de compra.",
+    quote: "É simples, constante e eficaz.",
+    poster: "/images/testimonials/compra.jpg",
+  },
+];
