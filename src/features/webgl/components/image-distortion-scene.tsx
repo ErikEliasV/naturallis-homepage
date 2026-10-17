@@ -129,9 +129,11 @@ export default function ImageDistortionScene({
       toHover(1);
     };
     const onPointerLeave = () => toHover(0);
+    // Content layered above the image (headings, buttons) must not block the effect.
+    const pointerRoot = container.closest<HTMLElement>("[data-webgl-pointer-root]") ?? container;
     if (finePointer) {
-      container.addEventListener("pointermove", onPointerMove);
-      container.addEventListener("pointerleave", onPointerLeave);
+      pointerRoot.addEventListener("pointermove", onPointerMove);
+      pointerRoot.addEventListener("pointerleave", onPointerLeave);
     }
 
     const tick = (time: number) => {
@@ -158,8 +160,8 @@ export default function ImageDistortionScene({
       visibility.disconnect();
       resizeObserver.disconnect();
       scrollTrigger.kill();
-      container.removeEventListener("pointermove", onPointerMove);
-      container.removeEventListener("pointerleave", onPointerLeave);
+      pointerRoot.removeEventListener("pointermove", onPointerMove);
+      pointerRoot.removeEventListener("pointerleave", onPointerLeave);
       gsap.killTweensOf([pointer, canvas]);
       texture?.dispose();
       geometry.dispose();

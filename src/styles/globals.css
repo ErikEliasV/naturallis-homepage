@@ -31,6 +31,7 @@
   --color-surface: #f0f0f0;
   --color-surface-soft: #f4f4f4;
   --color-glass: rgb(141 141 141 / 0.52);
+  --color-stone: #494a45;
 
   /* Typography: fluid scale (Home, header, footer) */
   --text-*: initial;
@@ -44,6 +45,8 @@
   --text-display-md--line-height: 1.03;
   --text-display-sm: clamp(1.875rem, 2.5vw, 3rem);
   --text-display-sm--line-height: 1.2;
+  --text-pill-lg: clamp(1.125rem, 1.9507vw, 2.3409rem);
+  --text-pill-lg--line-height: 1.03;
   --text-stat-label: clamp(1.125rem, 1.6266vw, 1.952rem);
   --text-stat-label--line-height: 1.03;
   --text-button-lg: clamp(1rem, 1.5156vw, 1.8188rem);
@@ -119,6 +122,14 @@
   --spacing-card-y: clamp(1.25rem, 1.7969vw, 2.1563rem);
   --spacing-card-gap: clamp(1.5rem, 3.1661vw, 3.7993rem);
 
+  /* Skin Line banner and care cards */
+  --spacing-pill-lg: clamp(2.75rem, 3.9018vw, 4.6821rem);
+  --spacing-pill-pad: clamp(1rem, 1.1875vw, 1.425rem);
+  --spacing-banner-inset: clamp(1rem, 4.0948vw, 4.9138rem);
+  --spacing-feature-card: clamp(16rem, 19.9479vw, 23.9375rem);
+  --spacing-feature-pad: clamp(1rem, 1.3021vw, 1.5625rem);
+  --spacing-intro: clamp(18rem, 30.7292vw, 36.875rem);
+
   /* Carousel */
   --spacing-carousel-progress: clamp(8rem, 17.8838vw, 21.4605rem);
 
@@ -146,6 +157,7 @@
   --radius-icon: 1.03125rem;
   --radius-feature: 1.125rem;
   --radius-tile: 1.25rem;
+  --radius-banner: 1.8321rem;
   --radius-pill: 9999px;
 
   /* Effects */

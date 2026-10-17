@@ -13,6 +13,7 @@ export function HomeHero() {
   return (
     <section
       data-header-theme="dark"
+      data-webgl-pointer-root
       className="relative isolate flex min-h-dvh flex-col justify-end overflow-hidden pt-header-space pb-section-sm text-white lg:min-h-hero lg:pb-hero-bottom"
     >
       <WebglImage
