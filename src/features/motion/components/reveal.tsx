@@ -1,6 +1,6 @@
 "use client";
 
-import { type ReactNode, useCallback, useRef } from "react";
+import { type HTMLAttributes, type ReactNode, useCallback, useRef } from "react";
 
 import { DURATION, EASE, ENTER_OFFSET_Y, MEDIA_QUERY, STAGGER } from "@/constants/motion";
 import { gsap, useGSAP } from "@/lib/gsap";
@@ -8,9 +8,8 @@ import { gsap, useGSAP } from "@/lib/gsap";
 import { scheduleReveal } from "../schedule-reveal";
 import { type RevealTag, type RevealTrigger } from "../types";
 
-type RevealProps = {
+type RevealProps = Omit<HTMLAttributes<HTMLElement>, "children"> & {
   as?: RevealTag;
-  id?: string;
   /** When true, direct children enter one after another instead of as a block. */
   stagger?: boolean;
   trigger?: RevealTrigger;
@@ -23,13 +22,13 @@ type RevealProps = {
 /** Fade + vertical slide entrance, optionally staggered across direct children. */
 export function Reveal({
   as = "div",
-  id,
   stagger = false,
   trigger = "scroll",
   delay = 0,
   y = ENTER_OFFSET_Y,
   className,
   children,
+  ...props
 }: RevealProps) {
   const ref = useRef<HTMLElement | null>(null);
   const setRef = useCallback((node: HTMLElement | null) => {
@@ -62,7 +61,7 @@ export function Reveal({
 
   const Tag = as;
   return (
-    <Tag ref={setRef} id={id} className={className}>
+    <Tag ref={setRef} className={className} {...props}>
       {children}
     </Tag>
   );
