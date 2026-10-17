@@ -97,6 +97,16 @@
   --spacing-pad-md: clamp(0.875rem, 0.7708vw, 0.925rem);
   --spacing-pad-sm: clamp(0.75rem, 0.6845vw, 0.8214rem);
 
+  /* Header */
+  --spacing-header-offset: clamp(1rem, 2.1875vw, 2.625rem);
+  --spacing-header-offset-home: clamp(1rem, 3.4375vw, 4.125rem);
+  --spacing-header-space: clamp(6rem, 8.8021vw, 10.5625rem);
+  --spacing-header-actions: clamp(0.5rem, 0.5729vw, 0.6875rem);
+  --spacing-logo: clamp(7.5rem, 10.9375vw, 13.125rem);
+  --spacing-nav-pill: clamp(2.75rem, 3.5774vw, 4.2929rem);
+  --spacing-nav-pad: clamp(1rem, 1.4075vw, 1.689rem);
+  --spacing-nav-gap: clamp(1rem, 1.4661vw, 1.7594rem);
+
   /* Containers */
   --container-content: 110rem;
   --container-shop: 90rem;
