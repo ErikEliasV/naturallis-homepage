@@ -3,6 +3,7 @@
 import { useId, useMemo } from "react";
 
 import { Accordion } from "@/components/ui/accordion";
+import { Checkbox } from "@/components/ui/checkbox";
 import { CATEGORIES } from "@/constants/categories";
 import { cn } from "@/utils/cn";
 import { formatPrice } from "@/utils/format-price";
@@ -11,8 +12,6 @@ import { type Product } from "../types";
 import { type Availability, type CollectionFilters, countBy, toggle } from "../utils/collection";
 
 const FACET_TRIGGER = "pt-6 pb-3 font-serif text-heading-sm";
-const CHECKBOX =
-  "size-5 shrink-0 cursor-pointer appearance-none rounded-[2px] border border-black bg-white checked:bg-black checked:shadow-[inset_0_0_0_3px_white] focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-forest disabled:cursor-not-allowed";
 const RANGE =
   "pointer-events-none absolute inset-0 w-full appearance-none bg-transparent [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-pill [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-black [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-pill [&::-webkit-slider-thumb]:bg-black";
 const PRICE_INPUT =
@@ -41,9 +40,7 @@ function CheckboxList({
                 disabled && "cursor-not-allowed opacity-50",
               )}
             >
-              <input
-                type="checkbox"
-                className={CHECKBOX}
+              <Checkbox
                 checked={selected.includes(option.value)}
                 disabled={disabled}
                 onChange={() => onToggle(option.value)}

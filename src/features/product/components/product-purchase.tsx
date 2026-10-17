@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useId, useState } from "react";
 
 import { Button } from "@/components/ui/button";
+import { ChoicePill } from "@/components/ui/choice-pill";
 import { LayeredIcon } from "@/components/ui/layered-icon";
 import { QuantityStepper } from "@/components/ui/quantity-stepper";
 import { ICON_STOCK } from "@/constants/icons";
@@ -28,28 +29,17 @@ export function ProductPurchase({ product }: { product: Product }) {
           <span>{selected?.label}</span>
         </legend>
         <div className="mt-3 flex flex-wrap gap-2">
-          {product.sizes.map((size) => {
-            const checked = size.capsules === capsules;
-            return (
-              <label
-                key={size.capsules}
-                className={cn(
-                  "flex h-10 cursor-pointer items-center rounded-pill border border-black px-5 text-body-sm transition-colors duration-300 ease-power3-out has-focus-visible:outline-2 has-focus-visible:outline-offset-2 has-focus-visible:outline-forest",
-                  checked ? "bg-black text-white" : "bg-white text-black hover:bg-black/5",
-                )}
-              >
-                <input
-                  type="radio"
-                  name={groupId}
-                  value={size.capsules}
-                  checked={checked}
-                  onChange={() => setCapsules(size.capsules)}
-                  className="sr-only"
-                />
-                {size.label}
-              </label>
-            );
-          })}
+          {product.sizes.map((size) => (
+            <ChoicePill
+              key={size.capsules}
+              name={groupId}
+              value={size.capsules}
+              checked={size.capsules === capsules}
+              onChange={() => setCapsules(size.capsules)}
+            >
+              {size.label}
+            </ChoicePill>
+          ))}
         </div>
       </fieldset>
 
