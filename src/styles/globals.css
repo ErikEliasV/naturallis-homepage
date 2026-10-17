@@ -76,6 +76,8 @@
   --text-body-sm--line-height: 1.5714;
   --text-caption: 0.8125rem;
   --text-caption--line-height: 1.6154;
+  --text-button: 1rem;
+  --text-button--line-height: 1.5;
 
   --tracking-eyebrow: 0.05em;
 
@@ -83,6 +85,17 @@
   --spacing-gutter: clamp(1rem, 4.1667vw, 5rem);
   --spacing-section: clamp(3.5rem, 5.2083vw, 6.25rem);
   --spacing-section-sm: clamp(2rem, 2.6042vw, 3.125rem);
+
+  /* Controls (heights, square sizes and inline paddings) */
+  --spacing-control-lg: clamp(2.75rem, 3.5361vw, 4.2433rem);
+  --spacing-control-md: clamp(2.5rem, 2.6978vw, 3.2374rem);
+  --spacing-control-sm: clamp(2.25rem, 2.3959vw, 2.875rem);
+  --spacing-control-shop: 3.125rem;
+  --spacing-icon-button: clamp(2.5rem, 2.7604vw, 3.3125rem);
+  --spacing-arrow-button: clamp(2.75rem, 3.1661vw, 3.7993rem);
+  --spacing-pad-lg: clamp(1rem, 1.0103vw, 1.2124rem);
+  --spacing-pad-md: clamp(0.875rem, 0.7708vw, 0.925rem);
+  --spacing-pad-sm: clamp(0.75rem, 0.6845vw, 0.8214rem);
 
   /* Containers */
   --container-content: 110rem;
