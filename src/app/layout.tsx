@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SITE } from "@/constants/site";
 import { FONT_VARIABLES } from "@/lib/fonts";
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
         <SmoothScrollProvider>
           <Header />
           {children}
+          <Footer />
         </SmoothScrollProvider>
       </body>
     </html>
