@@ -107,6 +107,13 @@
   --spacing-nav-pad: clamp(1rem, 1.4075vw, 1.689rem);
   --spacing-nav-gap: clamp(1rem, 1.4661vw, 1.7594rem);
 
+  /* Home hero */
+  --spacing-hero: 62.5521vw;
+  --spacing-hero-bottom: clamp(3rem, 18.5417vw, 22.25rem);
+  --spacing-hero-copy: clamp(18rem, 35.0521vw, 42.0625rem);
+  --spacing-hero-copy-gap: clamp(0.75rem, 0.9896vw, 1.1875rem);
+  --spacing-stats-gap: clamp(1rem, 1.5453vw, 1.8544rem);
+
   /* Footer */
   --spacing-cta-height: clamp(36rem, 66.0417vw, 79.25rem);
   --spacing-cta-bottom: clamp(3rem, 6.8229vw, 8.1875rem);
