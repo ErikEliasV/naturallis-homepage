@@ -4,6 +4,8 @@ export const EASE = {
   out: "power3.out",
   expo: "expo.out",
   inOut: "power2.inOut",
+  /** Only for scroll-scrubbed tweens, where Lenis already smooths the motion. */
+  scrub: "none",
 } as const;
 
 /** Durations in seconds. Entrances: 0.6–1.2s. Short interactions: 0.2–0.4s. */
@@ -25,6 +27,9 @@ export const STAGGER = {
 
 /** Default y offset (px) for fade + slide entrances. */
 export const ENTER_OFFSET_Y = 40;
+
+/** ScrollTrigger start position for entrance reveals. */
+export const REVEAL_START = "top 85%";
 
 export const MEDIA_QUERY = {
   motionOk: "(prefers-reduced-motion: no-preference)",
