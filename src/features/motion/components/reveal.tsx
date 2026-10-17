@@ -10,6 +10,7 @@ import { type RevealTag, type RevealTrigger } from "../types";
 
 type RevealProps = {
   as?: RevealTag;
+  id?: string;
   /** When true, direct children enter one after another instead of as a block. */
   stagger?: boolean;
   trigger?: RevealTrigger;
@@ -22,6 +23,7 @@ type RevealProps = {
 /** Fade + vertical slide entrance, optionally staggered across direct children. */
 export function Reveal({
   as = "div",
+  id,
   stagger = false,
   trigger = "scroll",
   delay = 0,
@@ -60,7 +62,7 @@ export function Reveal({
 
   const Tag = as;
   return (
-    <Tag ref={setRef} className={className}>
+    <Tag ref={setRef} id={id} className={className}>
       {children}
     </Tag>
   );
