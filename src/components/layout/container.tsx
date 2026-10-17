@@ -9,11 +9,11 @@ type ContainerProps<T extends ElementType> = {
 } & Omit<ComponentPropsWithoutRef<T>, "as">;
 
 const WIDTHS = {
-  content: "max-w-content",
-  shop: "max-w-shop",
+  content: "max-w-[calc(var(--container-content)+2*var(--spacing-gutter))]",
+  shop: "max-w-[calc(var(--container-shop)+2*var(--spacing-gutter))]",
 } as const;
 
-/** Centers content with the page gutter; max width applies to the content box. */
+/** Centers content with the page gutter; the max width excludes the gutter. */
 export function Container<T extends ElementType = "div">({
   as,
   width = "content",
@@ -22,9 +22,6 @@ export function Container<T extends ElementType = "div">({
 }: ContainerProps<T>) {
   const Component: ElementType = as ?? "div";
   return (
-    <Component
-      className={cn("mx-auto box-content w-auto px-gutter", WIDTHS[width], className)}
-      {...props}
-    />
+    <Component className={cn("mx-auto w-full px-gutter", WIDTHS[width], className)} {...props} />
   );
 }
