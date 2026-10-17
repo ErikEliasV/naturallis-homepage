@@ -1,3 +1,5 @@
+import { type CategorySlug } from "./categories";
+
 export type HeroStat = {
   value: number;
   decimals?: number;
@@ -38,4 +40,17 @@ export const CARE_PILLARS: readonly CarePillar[] = [
     title: "Transparência em cada etapa",
     description: "Informações claras sobre produtos, pedidos e atendimento.",
   },
+];
+
+export type CategoryFilter = {
+  slug: CategorySlug;
+  icon: string;
+};
+
+/** Category chips of the "Encontre o que faz sentido" panel. */
+export const HOME_CATEGORY_FILTERS: readonly CategoryFilter[] = [
+  { slug: "saude-e-bem-estar", icon: "/icons/categories/saude-e-bem-estar.svg" },
+  { slug: "saude-da-mulher", icon: "/icons/categories/saude-da-mulher.svg" },
+  { slug: "sono-e-relaxamento", icon: "/icons/categories/sono-e-relaxamento.svg" },
+  { slug: "vitaminas-e-minerais", icon: "/icons/categories/vitaminas-e-minerais.svg" },
 ];
