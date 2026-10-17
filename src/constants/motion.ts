@@ -36,4 +36,6 @@ export const MEDIA_QUERY = {
   reducedMotion: "(prefers-reduced-motion: reduce)",
   finePointer: "(hover: hover) and (pointer: fine)",
   desktop: "(min-width: 64rem)",
+  /** Desktop pointer with motion allowed: enables the custom cursor and magnetic effects. */
+  pointerMotion: "(hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference)",
 } as const;
