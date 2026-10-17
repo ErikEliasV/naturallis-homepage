@@ -4,11 +4,11 @@ import Link from "next/link";
 
 import { Button } from "@/components/ui/button";
 import { QuantityStepper } from "@/components/ui/quantity-stepper";
-import { CONTACT } from "@/constants/contact";
 import { productHref } from "@/constants/products";
 import { ProductBottle } from "@/features/catalog/components/product-bottle";
 import { Reveal } from "@/features/motion/components/reveal";
 import { formatPrice } from "@/utils/format-price";
+import { whatsappLink } from "@/utils/whatsapp";
 
 import { useCart } from "../hooks/use-cart";
 import { clearCart, removeItem, setQuantity } from "../store";
@@ -19,7 +19,7 @@ function whatsappCheckoutHref(lines: readonly CartLine[], subtotal: number) {
     .map((line) => `• ${line.quantity}× ${line.product.name} (${line.capsules} cápsulas)`)
     .join("\n");
   const message = `Olá! Gostaria de finalizar este pedido:\n${items}\nSubtotal: ${formatPrice(subtotal)}`;
-  return `${CONTACT.whatsapp.href}?text=${encodeURIComponent(message)}`;
+  return whatsappLink(message);
 }
 
 /** Cart lines, quantities and summary. Checkout continues with the pharmacy on WhatsApp. */
