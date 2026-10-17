@@ -3,6 +3,8 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SITE } from "@/constants/site";
+import { PageTransition } from "@/features/transitions/components/page-transition";
+import { Preloader } from "@/features/transitions/components/preloader";
 import { FONT_VARIABLES } from "@/lib/fonts";
 import { SmoothScrollProvider } from "@/lib/lenis/smooth-scroll-provider";
 
@@ -32,6 +34,8 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Header />
           {children}
           <Footer />
+          <PageTransition />
+          <Preloader />
         </SmoothScrollProvider>
       </body>
     </html>
