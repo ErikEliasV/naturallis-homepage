@@ -1,6 +1,5 @@
 "use client";
 
-import Image from "next/image";
 import { useLenis } from "lenis/react";
 import { useCallback, useEffect, useRef, useState } from "react";
 
@@ -8,33 +7,12 @@ import { ArrowButton } from "@/components/ui/arrow-button";
 import { LayeredIcon } from "@/components/ui/layered-icon";
 import { ICON_ZOOM } from "@/constants/icons";
 import { DURATION, EASE, MEDIA_QUERY } from "@/constants/motion";
-import { ProductBottle } from "@/features/catalog/components/product-bottle";
 import { type Product } from "@/features/catalog/types";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/utils/cn";
 
 import { type GalleryImage } from "../types";
-
-function Slide({
-  image,
-  product,
-  sizes,
-  bottleWidth,
-}: {
-  image: GalleryImage;
-  product: Product;
-  sizes: string;
-  bottleWidth: string;
-}) {
-  if (image.kind === "bottle") {
-    return (
-      <div className="flex size-full items-center justify-center bg-surface">
-        <ProductBottle product={product} sizes={sizes} className={bottleWidth} />
-      </div>
-    );
-  }
-  return <Image src={image.src} alt={image.alt} fill sizes={sizes} className="object-cover" />;
-}
+import { GallerySlide } from "./gallery-slide";
 
 type ProductGalleryProps = {
   product: Product;
@@ -137,7 +115,12 @@ export function ProductGallery({ product, images }: ProductGalleryProps) {
               )}
             >
               <span className="relative block size-full overflow-hidden rounded-xs">
-                <Slide image={image} product={product} sizes="7.5rem" bottleWidth="w-[26%]" />
+                <GallerySlide
+                  image={image}
+                  product={product}
+                  sizes="7.5rem"
+                  bottleWidth="w-[26%]"
+                />
               </span>
             </button>
           </li>
@@ -161,7 +144,7 @@ export function ProductGallery({ product, images }: ProductGalleryProps) {
               onClick={() => setZoomed(index)}
               className="relative block size-full cursor-zoom-in focus-visible:outline-2 focus-visible:-outline-offset-4 focus-visible:outline-forest"
             >
-              <Slide
+              <GallerySlide
                 image={image}
                 product={product}
                 sizes="(min-width: 64rem) 45vw, 85vw"
@@ -195,7 +178,12 @@ export function ProductGallery({ product, images }: ProductGalleryProps) {
             data-lightbox-frame
             className="relative aspect-square w-[min(90vw,85dvh)] overflow-hidden rounded-tile"
           >
-            <Slide image={zoomedImage} product={product} sizes="90vw" bottleWidth="w-[26%]" />
+            <GallerySlide
+              image={zoomedImage}
+              product={product}
+              sizes="90vw"
+              bottleWidth="w-[26%]"
+            />
           </div>
           <button
             type="button"
