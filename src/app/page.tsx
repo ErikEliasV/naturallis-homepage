@@ -5,6 +5,7 @@ import { HomeHero } from "@/components/sections/home/home-hero";
 import { HomeIngredients } from "@/components/sections/home/home-ingredients";
 import { HomeProducts } from "@/components/sections/home/home-products";
 import { HomeSkinLine } from "@/components/sections/home/home-skin-line";
+import { HomeTestimonials } from "@/components/sections/home/home-testimonials";
 
 export default function HomePage() {
   return (
@@ -16,6 +17,7 @@ export default function HomePage() {
       <HomeIngredients />
       <HomeCategories />
       <HomeBeforeAfter />
+      <HomeTestimonials />
     </main>
   );
 }
