@@ -1,11 +1,15 @@
+import { HomeCare } from "@/components/sections/home/home-care";
 import { HomeHero } from "@/components/sections/home/home-hero";
 import { HomeProducts } from "@/components/sections/home/home-products";
+import { HomeSkinLine } from "@/components/sections/home/home-skin-line";
 
 export default function HomePage() {
   return (
     <main className="flex flex-col">
       <HomeHero />
       <HomeProducts />
+      <HomeSkinLine />
+      <HomeCare />
     </main>
   );
 }
