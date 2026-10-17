@@ -87,6 +87,13 @@
   --text-body-sm--line-height: 1.5714;
   --text-caption: 0.8125rem;
   --text-caption--line-height: 1.6154;
+  /* Product card text scales with the card width (container units, 427px base) */
+  --text-card-kind: 4.869cqw;
+  --text-card-kind--line-height: 1.03;
+  --text-card-name: 5.4cqw;
+  --text-card-name--line-height: 1.03;
+  --text-card-badge: 3.848cqw;
+  --text-card-badge--line-height: 1.03;
   --text-button: 1rem;
   --text-button--line-height: 1.5;
 
@@ -125,10 +132,18 @@
   --spacing-hero-copy-gap: clamp(0.75rem, 0.9896vw, 1.1875rem);
   --spacing-stats-gap: clamp(1rem, 1.5453vw, 1.8544rem);
 
-  /* Product card */
+  /* Product card: width in carousels, inner spacing in container units (427px base) */
   --spacing-product-card: clamp(16.5rem, 22.2397vw, 26.6875rem);
   --spacing-card-y: clamp(1.25rem, 1.7969vw, 2.1563rem);
   --spacing-card-gap: clamp(1.5rem, 3.1661vw, 3.7993rem);
+  --spacing-card-pad-x: 3.463cqw;
+  --spacing-card-pad-y: 8.08cqw;
+  --spacing-card-stack: 14.236cqw;
+  --spacing-card-info: 3.463cqw;
+  --spacing-card-price: 2.693cqw;
+  --spacing-card-button: 12.697cqw;
+  --spacing-card-badge-x: 3.078cqw;
+  --spacing-card-badge-y: 1.924cqw;
 
   /* Skin Line banner and care cards */
   --spacing-pill-lg: clamp(2.75rem, 3.9018vw, 4.6821rem);
@@ -146,6 +161,10 @@
   --spacing-chip-gap: clamp(0.75rem, 0.9734vw, 1.168rem);
   --spacing-panel-gap: clamp(2rem, 3.1182vw, 3.7419rem);
   --spacing-stack: clamp(1.5rem, 2.1875vw, 2.625rem);
+
+  /* Shop pages (category and product) */
+  --spacing-shop-sidebar: 18.4375rem;
+  --spacing-shop-banner: 20.625rem;
 
   /* Testimonials */
   --spacing-testimonial-card: clamp(16.5rem, 24.6354vw, 29.5625rem);
@@ -178,6 +197,8 @@
   --radius-feature: 1.125rem;
   --radius-tile: 1.25rem;
   --radius-banner: 1.8321rem;
+  --radius-card-badge: 2.81cqw;
+  --radius-card-button: 3.864cqw;
   --radius-panel: clamp(2.5rem, 6.0938vw, 7.3125rem);
   --radius-pill: 9999px;
 
