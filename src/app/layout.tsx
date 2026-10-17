@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Footer } from "@/components/layout/footer";
 import { Header } from "@/components/layout/header";
 import { SITE } from "@/constants/site";
+import { CustomCursor } from "@/features/cursor/components/custom-cursor";
 import { PageTransition } from "@/features/transitions/components/page-transition";
 import { Preloader } from "@/features/transitions/components/preloader";
 import { FONT_VARIABLES } from "@/lib/fonts";
@@ -36,6 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
           <Footer />
           <PageTransition />
           <Preloader />
+          <CustomCursor />
         </SmoothScrollProvider>
       </body>
     </html>
