@@ -16,6 +16,7 @@ import {
   HEADER_SCROLLED_AFTER,
   NAV_LINKS,
 } from "@/constants/navigation";
+import { CartButton } from "@/features/cart/components/cart-button";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/utils/cn";
 
@@ -180,9 +181,7 @@ export function Header() {
                 {FORMULA_CTA.label}
               </Button>
             </div>
-            <IconButton href={ACCOUNT_LINKS.cart.href} label={ACCOUNT_LINKS.cart.label}>
-              <Image src="/icons/cart.svg" alt="" width={34} height={32} className="w-[60%]" />
-            </IconButton>
+            <CartButton />
             <div className="hidden lg:flex">
               <IconButton href={ACCOUNT_LINKS.account.href} label={ACCOUNT_LINKS.account.label}>
                 <Image src="/icons/user.svg" alt="" width={38} height={38} className="w-[72%]" />
