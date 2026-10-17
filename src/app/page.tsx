@@ -1,3 +1,4 @@
+import { HomeBeforeAfter } from "@/components/sections/home/home-before-after";
 import { HomeCare } from "@/components/sections/home/home-care";
 import { HomeCategories } from "@/components/sections/home/home-categories";
 import { HomeHero } from "@/components/sections/home/home-hero";
@@ -14,6 +15,7 @@ export default function HomePage() {
       <HomeCare />
       <HomeIngredients />
       <HomeCategories />
+      <HomeBeforeAfter />
     </main>
   );
 }

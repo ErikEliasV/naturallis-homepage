@@ -54,3 +54,34 @@ export const HOME_CATEGORY_FILTERS: readonly CategoryFilter[] = [
   { slug: "sono-e-relaxamento", icon: "/icons/categories/sono-e-relaxamento.svg" },
   { slug: "vitaminas-e-minerais", icon: "/icons/categories/vitaminas-e-minerais.svg" },
 ];
+
+export type TransformationHighlight = {
+  productSlug: string;
+  benefits: readonly [string, string];
+};
+
+/** Products selectable in the before & after block, with two headline benefits each. */
+export const TRANSFORMATION_HIGHLIGHTS: readonly TransformationHighlight[] = [
+  {
+    productSlug: "termogenico-natural",
+    benefits: ["Ativos naturais que apoiam o metabolismo", "Uso prático, uma cápsula pela manhã"],
+  },
+  {
+    productSlug: "colageno-verisol",
+    benefits: [
+      "Contribui para a firmeza e a hidratação da pele",
+      "Peptídeos de colágeno com vitamina C",
+    ],
+  },
+  {
+    productSlug: "daily-synbiotic",
+    benefits: [
+      "Apoia o equilíbrio da microbiota intestinal",
+      "Ajuda a reduzir o desconforto digestivo",
+    ],
+  },
+  {
+    productSlug: "multivitaminico-diario",
+    benefits: ["20 vitaminas e minerais essenciais", "Completa a rotina em uma cápsula ao dia"],
+  },
+];

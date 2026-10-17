@@ -69,6 +69,8 @@
   --text-badge--line-height: 1.03;
 
   /* Typography: fixed scale (shop pages: category and product) */
+  --text-heading-2xl: 2.1rem;
+  --text-heading-2xl--line-height: 1.357;
   --text-heading-xl: 3rem;
   --text-heading-xl--line-height: 1.2;
   --text-heading-lg: 1.65rem;
@@ -178,7 +180,10 @@
 
   /* Effects */
   --blur-glass: 6px;
+  --blur-frost: 50px;
   --drop-shadow-chip: 0 7px 4.45px rgb(15 38 27 / 0.11);
+  --shadow-handle: 0 9px 11px 0 rgb(0 0 0 / 0.11);
+  --shadow-divider: 0 0 8px 0 rgb(0 0 0 / 0.11);
 
   /* Motion: CSS equivalents of the GSAP easings power3.out, expo.out and power2.inOut */
   --ease-power3-out: cubic-bezier(0.25, 1, 0.5, 1);
