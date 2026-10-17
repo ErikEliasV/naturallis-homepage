@@ -57,3 +57,19 @@ export const INGREDIENTS: readonly Ingredient[] = [
       "Conhecida por suas propriedades calmantes, apoia o relaxamento e um ritmo de sono saudável.",
   },
 ];
+
+/** Selection criteria shown on the ingredients page. */
+export const INGREDIENT_CRITERIA = [
+  {
+    title: "Origem rastreável",
+    description: "Trabalhamos com fornecedores qualificados e documentação de cada lote.",
+  },
+  {
+    title: "Análise de qualidade",
+    description: "Matérias-primas conferidas antes de entrar na manipulação.",
+  },
+  {
+    title: "Uso com orientação",
+    description: "Indicamos combinações e doses adequadas para cada rotina.",
+  },
+] as const;

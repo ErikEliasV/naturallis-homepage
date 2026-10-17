@@ -5,7 +5,7 @@ import { cn } from "@/utils/cn";
 
 type IngredientCardProps = {
   ingredient: Ingredient;
-  headingLevel?: "h3" | "h4";
+  headingLevel?: "h2" | "h3" | "h4";
   className?: string;
 };
 
