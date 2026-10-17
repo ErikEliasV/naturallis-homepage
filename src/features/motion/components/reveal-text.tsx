@@ -10,6 +10,7 @@ import { type RevealTag, type RevealTrigger } from "../types";
 
 type RevealTextProps = {
   as?: RevealTag;
+  id?: string;
   /** Unit that slides up from behind its line mask. */
   split?: "lines" | "words" | "chars";
   trigger?: RevealTrigger;
@@ -21,6 +22,7 @@ type RevealTextProps = {
 /** Masked text reveal (lines, words or chars) built on SplitText. */
 export function RevealText({
   as = "div",
+  id,
   split = "lines",
   trigger = "scroll",
   delay = 0,
@@ -71,7 +73,7 @@ export function RevealText({
 
   const Tag = as;
   return (
-    <Tag ref={setRef} className={className}>
+    <Tag ref={setRef} id={id} className={className}>
       {children}
     </Tag>
   );

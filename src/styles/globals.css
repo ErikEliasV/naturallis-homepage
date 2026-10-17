@@ -114,6 +114,14 @@
   --spacing-hero-copy-gap: clamp(0.75rem, 0.9896vw, 1.1875rem);
   --spacing-stats-gap: clamp(1rem, 1.5453vw, 1.8544rem);
 
+  /* Product card */
+  --spacing-product-card: clamp(16.5rem, 22.2397vw, 26.6875rem);
+  --spacing-card-y: clamp(1.25rem, 1.7969vw, 2.1563rem);
+  --spacing-card-gap: clamp(1.5rem, 3.1661vw, 3.7993rem);
+
+  /* Carousel */
+  --spacing-carousel-progress: clamp(8rem, 17.8838vw, 21.4605rem);
+
   /* Footer */
   --spacing-cta-height: clamp(36rem, 66.0417vw, 79.25rem);
   --spacing-cta-bottom: clamp(3rem, 6.8229vw, 8.1875rem);
@@ -154,4 +162,5 @@
   --font-sans: var(--font-sf-pro), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
   --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-label: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }

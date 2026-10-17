@@ -1,4 +1,4 @@
-import { type ReactNode } from "react";
+import { type ComponentPropsWithoutRef } from "react";
 
 import { cn } from "@/utils/cn";
 
@@ -15,16 +15,15 @@ const SIZES: Record<BadgeSize, string> = {
   sm: "rounded-pill px-2.5 py-1 font-geist text-caption",
 };
 
-type BadgeProps = {
+type BadgeProps = ComponentPropsWithoutRef<"span"> & {
   tone?: BadgeTone;
   size?: BadgeSize;
-  className?: string;
-  children: ReactNode;
 };
 
-export function Badge({ tone = "promo", size = "md", className, children }: BadgeProps) {
+export function Badge({ tone = "promo", size = "md", className, children, ...props }: BadgeProps) {
   return (
     <span
+      {...props}
       className={cn(
         "inline-flex items-center justify-center font-medium whitespace-nowrap text-white",
         TONES[tone],

@@ -1,4 +1,4 @@
-import { Geist, Instrument_Serif } from "next/font/google";
+import { Geist, Instrument_Serif, Montserrat } from "next/font/google";
 import localFont from "next/font/local";
 
 export const nohemi = localFont({
@@ -40,6 +40,14 @@ export const instrumentSerif = Instrument_Serif({
   display: "swap",
 });
 
-export const FONT_VARIABLES = [nohemi, sfPro, geist, instrumentSerif]
+/** Only used on the product bottle label, as in the Figma mockup. */
+export const montserrat = Montserrat({
+  subsets: ["latin"],
+  weight: "700",
+  variable: "--font-montserrat",
+  display: "swap",
+});
+
+export const FONT_VARIABLES = [nohemi, sfPro, geist, instrumentSerif, montserrat]
   .map((font) => font.variable)
   .join(" ");
