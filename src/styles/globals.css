@@ -1,0 +1,119 @@
+@import "tailwindcss";
+
+/*
+ * Design tokens extracted from the Figma file (screens: Home, Skin, Pure Balance).
+ * Fluid values use 1920px as the reference viewport: at 1920px they match the
+ * Figma frame exactly and scale down proportionally until the clamp minimum.
+ */
+
+@theme {
+  /* Colors */
+  --color-*: initial;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-forest: #0b2a1b;
+  --color-sage: #759374;
+  --color-lime: #e3f6a4;
+  --color-promo: #c5301c;
+  --color-stock: #0a9b61;
+
+  --color-ink: #070707;
+  --color-ink-soft: #141414;
+  --color-graphite: #2b2b2b;
+  --color-slate: #4e4e4e;
+  --color-muted: #8a8a8a;
+  --color-faint: #999999;
+
+  --color-line: #d9d9d9;
+  --color-mist: #ececec;
+  --color-cloud: #f3f3f3;
+  --color-surface: #f0f0f0;
+  --color-surface-soft: #f4f4f4;
+  --color-glass: rgb(141 141 141 / 0.52);
+
+  /* Typography: fluid scale (Home, header, footer) */
+  --text-*: initial;
+  --text-display-2xl: clamp(3.5rem, 10.4167vw, 12.5rem);
+  --text-display-2xl--line-height: 1.03;
+  --text-display-xl: clamp(2.75rem, 4.4734vw, 5.3681rem);
+  --text-display-xl--line-height: 1.03;
+  --text-display-lg: clamp(2.25rem, 3.3854vw, 4.0625rem);
+  --text-display-lg--line-height: 1.03;
+  --text-display-md: clamp(2rem, 2.8594vw, 3.4313rem);
+  --text-display-md--line-height: 1.03;
+  --text-display-sm: clamp(1.875rem, 2.5vw, 3rem);
+  --text-display-sm--line-height: 1.2;
+  --text-stat-label: clamp(1.125rem, 1.6266vw, 1.952rem);
+  --text-stat-label--line-height: 1.03;
+  --text-button-lg: clamp(1rem, 1.5156vw, 1.8188rem);
+  --text-button-lg--line-height: 1.03;
+  --text-lead: clamp(1.0625rem, 1.3542vw, 1.625rem);
+  --text-lead--line-height: 1.03;
+  --text-title: clamp(1rem, 1.201vw, 1.4413rem);
+  --text-title--line-height: 1.03;
+  --text-nav: clamp(0.9375rem, 1.1563vw, 1.3875rem);
+  --text-nav--line-height: 1.03;
+  --text-body-lg: clamp(0.9375rem, 1.0826vw, 1.2991rem);
+  --text-body-lg--line-height: 1.03;
+  --text-label: clamp(0.875rem, 1.0268vw, 1.2322rem);
+  --text-label--line-height: 1.03;
+  --text-badge: clamp(0.75rem, 0.8557vw, 1.0269rem);
+  --text-badge--line-height: 1.03;
+
+  /* Typography: fixed scale (shop pages: category and product) */
+  --text-serif-xl: 3rem;
+  --text-serif-xl--line-height: 1.2;
+  --text-serif-lg: 1.65rem;
+  --text-serif-lg--line-height: 1.454;
+  --text-serif-md: 1.35rem;
+  --text-serif-md--line-height: 1.555;
+  --text-serif-sm: 1.2rem;
+  --text-serif-sm--line-height: 1.625;
+  --text-body: 0.9375rem;
+  --text-body--line-height: 1.6;
+  --text-body-sm: 0.875rem;
+  --text-body-sm--line-height: 1.5714;
+  --text-caption: 0.8125rem;
+  --text-caption--line-height: 1.6154;
+
+  --tracking-eyebrow: 0.05em;
+
+  /* Spacing */
+  --spacing-gutter: clamp(1rem, 4.1667vw, 5rem);
+  --spacing-section: clamp(3.5rem, 5.2083vw, 6.25rem);
+  --spacing-section-sm: clamp(2rem, 2.6042vw, 3.125rem);
+
+  /* Containers */
+  --container-content: 110rem;
+  --container-shop: 90rem;
+
+  /* Breakpoints */
+  --breakpoint-3xl: 120rem;
+
+  /* Radii */
+  --radius-*: initial;
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.625rem;
+  --radius-card: 0.6875rem;
+  --radius-badge: 0.75rem;
+  --radius-icon: 1.03125rem;
+  --radius-feature: 1.125rem;
+  --radius-tile: 1.25rem;
+  --radius-pill: 9999px;
+
+  /* Effects */
+  --blur-glass: 6px;
+
+  /* Motion: CSS equivalents of the GSAP easings power3.out, expo.out and power2.inOut */
+  --ease-power3-out: cubic-bezier(0.25, 1, 0.5, 1);
+  --ease-expo-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-power2-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+}
+
+@theme inline {
+  --font-display: var(--font-nohemi), var(--font-sf-pro), ui-sans-serif, system-ui, sans-serif;
+  --font-sans: var(--font-sf-pro), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+}
