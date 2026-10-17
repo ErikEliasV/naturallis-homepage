@@ -3,57 +3,18 @@
 import { useId, useMemo } from "react";
 
 import { Accordion } from "@/components/ui/accordion";
-import { Checkbox } from "@/components/ui/checkbox";
 import { CATEGORIES } from "@/constants/categories";
-import { cn } from "@/utils/cn";
 import { formatPrice } from "@/utils/format-price";
 
 import { type Product } from "../types";
 import { type Availability, type CollectionFilters, countBy, toggle } from "../utils/collection";
+import { CheckboxList, type Option } from "./checkbox-list";
 
 const FACET_TRIGGER = "pt-6 pb-3 font-serif text-heading-sm";
 const RANGE =
   "pointer-events-none absolute inset-0 w-full appearance-none bg-transparent [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-pill [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-black [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-pill [&::-webkit-slider-thumb]:bg-black";
 const PRICE_INPUT =
   "h-control-shop w-full min-w-0 rounded-pill bg-mist px-4 text-black/70 outline-none focus-visible:ring-2 focus-visible:ring-forest";
-
-type Option = { value: string; label: string; count: number };
-
-function CheckboxList({
-  options,
-  selected,
-  onToggle,
-}: {
-  options: readonly Option[];
-  selected: readonly string[];
-  onToggle: (value: string) => void;
-}) {
-  return (
-    <ul className="flex flex-col gap-3 pb-6">
-      {options.map((option) => {
-        const disabled = option.count === 0 && !selected.includes(option.value);
-        return (
-          <li key={option.value}>
-            <label
-              className={cn(
-                "flex cursor-pointer items-center gap-2 text-black/70",
-                disabled && "cursor-not-allowed opacity-50",
-              )}
-            >
-              <Checkbox
-                checked={selected.includes(option.value)}
-                disabled={disabled}
-                onChange={() => onToggle(option.value)}
-              />
-              <span className="flex-1">{option.label}</span>
-              <span aria-label={`${option.count} produtos`}>{option.count}</span>
-            </label>
-          </li>
-        );
-      })}
-    </ul>
-  );
-}
 
 type FiltersPanelProps = {
   products: readonly Product[];
