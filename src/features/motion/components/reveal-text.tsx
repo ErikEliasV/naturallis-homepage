@@ -2,17 +2,17 @@
 
 import { type ReactNode, useCallback, useRef } from "react";
 
-import { DURATION, EASE, MEDIA_QUERY, REVEAL_START, STAGGER } from "@/constants/motion";
+import { DURATION, EASE, MEDIA_QUERY, STAGGER } from "@/constants/motion";
 import { gsap, SplitText, useGSAP } from "@/lib/gsap";
 
-import { type RevealTag } from "../types";
+import { scheduleReveal } from "../schedule-reveal";
+import { type RevealTag, type RevealTrigger } from "../types";
 
 type RevealTextProps = {
   as?: RevealTag;
   /** Unit that slides up from behind its line mask. */
   split?: "lines" | "words" | "chars";
-  /** `scroll` waits for the element to enter the viewport; `mount` plays right away. */
-  trigger?: "scroll" | "mount";
+  trigger?: RevealTrigger;
   delay?: number;
   className?: string;
   children: ReactNode;
@@ -39,22 +39,28 @@ export function RevealText({
 
       const mm = gsap.matchMedia();
       mm.add(MEDIA_QUERY.motionOk, () => {
+        let played = false;
+        let tween: gsap.core.Tween | undefined;
+
         SplitText.create(element, {
           type: split === "lines" ? "lines" : `lines,${split}`,
           mask: "lines",
           autoSplit: true,
-          onSplit: (self) =>
-            gsap.from(self[split], {
+          onSplit: (self) => {
+            tween = gsap.from(self[split], {
               yPercent: 110,
               duration: DURATION.enterLong,
               ease: EASE.expo,
               stagger: STAGGER[split],
-              delay,
-              scrollTrigger:
-                trigger === "scroll"
-                  ? { trigger: element, start: REVEAL_START, once: true }
-                  : undefined,
-            }),
+              paused: !played,
+            });
+            return tween;
+          },
+        });
+
+        return scheduleReveal(element, trigger, delay, () => {
+          played = true;
+          tween?.play();
         });
       });
 
