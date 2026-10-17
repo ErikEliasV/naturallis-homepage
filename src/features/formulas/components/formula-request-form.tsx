@@ -5,7 +5,8 @@ import { type FormEvent, useId, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { ChoicePill } from "@/components/ui/choice-pill";
-import { TextAreaField, TextField } from "@/components/ui/text-field";
+import { TextAreaField } from "@/components/ui/text-area-field";
+import { TextField } from "@/components/ui/text-field";
 import { whatsappLink } from "@/utils/whatsapp";
 
 type FieldName = "name" | "phone" | "consent";
