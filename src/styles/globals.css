@@ -107,6 +107,14 @@
   --spacing-nav-pad: clamp(1rem, 1.4075vw, 1.689rem);
   --spacing-nav-gap: clamp(1rem, 1.4661vw, 1.7594rem);
 
+  /* Footer */
+  --spacing-cta-height: clamp(36rem, 66.0417vw, 79.25rem);
+  --spacing-cta-bottom: clamp(3rem, 6.8229vw, 8.1875rem);
+  --spacing-footer-top: clamp(2rem, 3.2292vw, 3.875rem);
+  --spacing-footer-gap: clamp(3rem, 5.9896vw, 7.1875rem);
+  --spacing-footer-credit: clamp(3rem, 8.5vw, 10.2rem);
+  --spacing-footer-bottom: clamp(3rem, 4.6354vw, 5.5625rem);
+
   /* Containers */
   --container-content: 110rem;
   --container-shop: 90rem;
