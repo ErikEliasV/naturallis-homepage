@@ -15,7 +15,10 @@ type ParallaxProps = {
   children: ReactNode;
 };
 
-/** Scroll-linked vertical parallax. The outer box clips; the inner layer moves. */
+/**
+ * Scroll-linked vertical parallax. The outer box clips; the inner layer moves.
+ * Positioning of the outer box (relative/absolute) is left to the caller.
+ */
 export function Parallax({ speed = 0.1, className, innerClassName, children }: ParallaxProps) {
   const ref = useRef<HTMLDivElement>(null);
   const innerRef = useRef<HTMLDivElement>(null);
@@ -48,7 +51,7 @@ export function Parallax({ speed = 0.1, className, innerClassName, children }: P
   );
 
   return (
-    <div ref={ref} className={cn("relative overflow-hidden", className)}>
+    <div ref={ref} className={cn("overflow-hidden", className)}>
       <div ref={innerRef} className={cn("will-change-transform", innerClassName)}>
         {children}
       </div>
