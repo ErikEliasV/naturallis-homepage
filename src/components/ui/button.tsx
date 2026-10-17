@@ -1,6 +1,8 @@
 import Link from "next/link";
 import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 
+import { Magnetic } from "@/features/cursor/components/magnetic";
+import { RollLabel } from "@/features/cursor/components/roll-label";
 import { cn } from "@/utils/cn";
 
 export type ButtonVariant = "primary" | "light" | "mist" | "lime" | "ink" | "ghost";
@@ -28,6 +30,8 @@ const SIZES: Record<ButtonSize, string> = {
 type ButtonStyleProps = {
   variant?: ButtonVariant;
   size?: ButtonSize;
+  /** Follows the pointer on desktop. Defaults to true. */
+  magnetic?: boolean;
   className?: string;
   children: ReactNode;
 };
@@ -50,19 +54,23 @@ export function buttonClassName(
 
 /** Pill button from the Figma design system. Renders a Next link when `href` is set. */
 export function Button(props: ButtonProps) {
+  let element: ReactNode;
+
   if (props.href !== undefined) {
-    const { variant, size, className, children, ...linkProps } = props;
-    return (
+    const { variant, size, magnetic, className, children, ...linkProps } = props;
+    element = (
       <Link className={buttonClassName(variant, size, className)} {...linkProps}>
-        {children}
+        <RollLabel>{children}</RollLabel>
       </Link>
+    );
+  } else {
+    const { variant, size, magnetic, className, children, type = "button", ...buttonProps } = props;
+    element = (
+      <button type={type} className={buttonClassName(variant, size, className)} {...buttonProps}>
+        <RollLabel>{children}</RollLabel>
+      </button>
     );
   }
 
-  const { variant, size, className, children, type = "button", ...buttonProps } = props;
-  return (
-    <button type={type} className={buttonClassName(variant, size, className)} {...buttonProps}>
-      {children}
-    </button>
-  );
+  return props.magnetic === false ? element : <Magnetic>{element}</Magnetic>;
 }

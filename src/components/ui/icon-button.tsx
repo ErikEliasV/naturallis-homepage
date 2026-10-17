@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { type ComponentPropsWithoutRef, type ReactNode } from "react";
 
+import { Magnetic } from "@/features/cursor/components/magnetic";
 import { cn } from "@/utils/cn";
 
 export type IconButtonTone = "forest" | "ink";
@@ -34,21 +35,25 @@ export function IconButton(props: IconButtonProps) {
   if (props.href !== undefined) {
     const { label, tone = "forest", className, children, ...linkProps } = props;
     return (
-      <Link aria-label={label} className={cn(BASE, TONES[tone], className)} {...linkProps}>
-        {children}
-      </Link>
+      <Magnetic>
+        <Link aria-label={label} className={cn(BASE, TONES[tone], className)} {...linkProps}>
+          {children}
+        </Link>
+      </Magnetic>
     );
   }
 
   const { label, tone = "forest", className, children, type = "button", ...buttonProps } = props;
   return (
-    <button
-      type={type}
-      aria-label={label}
-      className={cn(BASE, TONES[tone], className)}
-      {...buttonProps}
-    >
-      {children}
-    </button>
+    <Magnetic>
+      <button
+        type={type}
+        aria-label={label}
+        className={cn(BASE, TONES[tone], className)}
+        {...buttonProps}
+      >
+        {children}
+      </button>
+    </Magnetic>
   );
 }
