@@ -15,8 +15,7 @@ Site institucional e vitrine da Naturallis: fórmulas manipuladas, suplementos e
 | Comando             | Descrição                             |
 | ------------------- | ------------------------------------- |
 | `npm run dev`       | Servidor de desenvolvimento           |
-| `npm run build`     | Build de produção                     |
-| `npm run start`     | Servidor de produção                  |
+| `npm run build`     | Gera o site estático em `out/`        |
 | `npm run lint`      | ESLint                                |
 | `npm run typecheck` | Checagem de tipos                     |
 | `npm run format`    | Formata o projeto com Prettier        |
@@ -24,11 +23,23 @@ Site institucional e vitrine da Naturallis: fórmulas manipuladas, suplementos e
 
 ## Variáveis de ambiente
 
-| Variável               | Uso                                                            |
-| ---------------------- | -------------------------------------------------------------- |
-| `NEXT_PUBLIC_SITE_URL` | Domínio público (URLs canônicas, sitemap, robots e Open Graph) |
+| Variável                | Uso                                                              |
+| ----------------------- | ---------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL`  | Domínio público (URLs canônicas, sitemap, robots e Open Graph)   |
+| `NEXT_PUBLIC_BASE_PATH` | Subcaminho do site (ex.: `/naturallis-homepage` no GitHub Pages) |
 
-Sem ela, o site usa `http://localhost:3000`.
+Sem elas, o site usa `http://localhost:3000` na raiz.
+
+## Deploy (GitHub Pages)
+
+O site é exportado como HTML estático (`output: "export"`). A cada push na `main`, o workflow
+`.github/workflows/deploy-pages.yml` valida o código, gera o build com o `basePath` do repositório e
+publica a pasta `out/` no GitHub Pages.
+
+Configuração única no GitHub: **Settings → Pages → Build and deployment → Source: GitHub Actions**.
+
+Para pré-visualizar o build estático localmente, sirva a pasta `out/` com qualquer servidor de
+arquivos estáticos.
 
 ## Estrutura
 
