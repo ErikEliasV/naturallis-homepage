@@ -1,7 +1,8 @@
 import { Container } from "@/components/layout/container";
 import { TESTIMONIALS } from "@/constants/home";
 import { Carousel } from "@/features/carousel/components/carousel";
-import { CarouselArrows, CarouselProgress } from "@/features/carousel/components/carousel-controls";
+import { CarouselArrows } from "@/features/carousel/components/carousel-arrows";
+import { CarouselProgress } from "@/features/carousel/components/carousel-progress";
 import { CarouselTrack } from "@/features/carousel/components/carousel-track";
 import { Reveal } from "@/features/motion/components/reveal";
 import { RevealText } from "@/features/motion/components/reveal-text";

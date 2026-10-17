@@ -3,7 +3,7 @@ import Image from "next/image";
 import { Container } from "@/components/layout/container";
 import { CARE_PILLARS } from "@/constants/home";
 import { Carousel } from "@/features/carousel/components/carousel";
-import { CarouselArrows } from "@/features/carousel/components/carousel-controls";
+import { CarouselArrows } from "@/features/carousel/components/carousel-arrows";
 import { CarouselTrack } from "@/features/carousel/components/carousel-track";
 import { HoverLift } from "@/features/cursor/components/hover-lift";
 import { Reveal } from "@/features/motion/components/reveal";

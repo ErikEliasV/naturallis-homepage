@@ -5,7 +5,8 @@ import { Children, type ReactNode, useEffect } from "react";
 import { gsap } from "@/lib/gsap";
 import { cn } from "@/utils/cn";
 
-import { slideOffsets, tweenScroll, useCarousel } from "./carousel";
+import { useCarousel } from "../hooks/use-carousel";
+import { slideOffsets, tweenScroll } from "../utils/scroll";
 
 /** Pixels the pointer must travel before a press becomes a drag (and clicks are cancelled). */
 const DRAG_THRESHOLD = 6;

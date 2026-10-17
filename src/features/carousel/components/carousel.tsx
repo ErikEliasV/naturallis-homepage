@@ -1,61 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  type ReactNode,
-  type RefObject,
-  useCallback,
-  useContext,
-  useMemo,
-  useRef,
-  useState,
-} from "react";
+import { type ReactNode, useCallback, useMemo, useRef, useState } from "react";
 
-import { DURATION, EASE } from "@/constants/motion";
-import { gsap } from "@/lib/gsap";
-
-type CarouselContextValue = {
-  label: string;
-  trackRef: RefObject<HTMLDivElement | null>;
-  thumbRef: RefObject<HTMLDivElement | null>;
-  canPrev: boolean;
-  canNext: boolean;
-  setEdges: (canPrev: boolean, canNext: boolean) => void;
-  scrollToIndex: (index: number) => void;
-  step: (direction: 1 | -1) => void;
-};
-
-const CarouselContext = createContext<CarouselContextValue | null>(null);
-
-export function useCarousel(): CarouselContextValue {
-  const context = useContext(CarouselContext);
-  if (!context) throw new Error("useCarousel must be used inside <Carousel>");
-  return context;
-}
-
-/** Offsets of each slide relative to the start of the track. */
-export function slideOffsets(track: HTMLElement): number[] {
-  const first = track.firstElementChild;
-  if (!(first instanceof HTMLElement)) return [];
-  return Array.from(track.children).map((child) =>
-    child instanceof HTMLElement ? child.offsetLeft - first.offsetLeft : 0,
-  );
-}
-
-/** Tweens the track to `left` with snapping paused so the tween is not fought by CSS snap. */
-export function tweenScroll(track: HTMLElement, left: number) {
-  const max = track.scrollWidth - track.clientWidth;
-  track.style.scrollSnapType = "none";
-  gsap.to(track, {
-    scrollLeft: Math.max(0, Math.min(left, max)),
-    duration: DURATION.enterShort,
-    ease: EASE.out,
-    overwrite: true,
-    onComplete: () => {
-      track.style.scrollSnapType = "";
-    },
-  });
-}
+import { CarouselContext } from "../hooks/use-carousel";
+import { slideOffsets, tweenScroll } from "../utils/scroll";
 
 type CarouselProps = {
   /** Accessible name of the carousel region. */
