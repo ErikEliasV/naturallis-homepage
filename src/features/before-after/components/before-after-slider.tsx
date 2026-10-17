@@ -4,13 +4,10 @@ import Image from "next/image";
 import { useId, useRef } from "react";
 
 import { DURATION, EASE, MEDIA_QUERY } from "@/constants/motion";
+import { FROSTED_GLASS } from "@/constants/surfaces";
 import { whenPageReady } from "@/features/transitions/page-ready";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/utils/cn";
-
-/** Frosted glass used by the labels and the handle (Figma "Paragraph" / "Text" layers). */
-const FROST =
-  "bg-[linear-gradient(130.7deg,rgb(255_255_255/0.4)_1.15%,rgb(255_255_255/0.01)_103%)] backdrop-blur-frost";
 
 /** Divider position (%) shown in the Figma frame. */
 const INITIAL_POSITION = 50;
@@ -105,7 +102,7 @@ export function BeforeAfterSlider({ before, after, className }: BeforeAfterSlide
 
       <span
         className={cn(
-          FROST,
+          FROSTED_GLASS,
           "absolute bottom-5 left-5 rounded-pill px-2.5 py-0.5 font-geist text-caption font-medium text-white capitalize",
         )}
       >
@@ -113,7 +110,7 @@ export function BeforeAfterSlider({ before, after, className }: BeforeAfterSlide
       </span>
       <span
         className={cn(
-          FROST,
+          FROSTED_GLASS,
           "absolute right-5 bottom-5 rounded-pill px-2.5 py-0.5 font-geist text-caption font-medium text-white capitalize",
         )}
       >
@@ -127,7 +124,7 @@ export function BeforeAfterSlider({ before, after, className }: BeforeAfterSlide
       <div
         aria-hidden
         className={cn(
-          FROST,
+          FROSTED_GLASS,
           "pointer-events-none absolute top-1/2 left-(--position) flex h-11.5 w-15.5 -translate-1/2 items-center justify-center gap-1.5 rounded-pill shadow-handle",
         )}
       >
