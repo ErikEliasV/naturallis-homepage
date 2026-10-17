@@ -10,7 +10,11 @@ import { TestimonialCard } from "@/features/testimonials/components/testimonial-
 /** "Cuidado que também se percebe no atendimento" (Figma testimonials container). */
 export function HomeTestimonials() {
   return (
-    <section aria-labelledby="home-testimonials-title" className="pt-section-sm pb-section">
+    <section
+      id="depoimentos"
+      aria-labelledby="home-testimonials-title"
+      className="scroll-mt-header-space pt-section-sm pb-section"
+    >
       <Container>
         <div className="flex flex-wrap items-start gap-x-7 gap-y-3 pb-card-gap">
           <RevealText
