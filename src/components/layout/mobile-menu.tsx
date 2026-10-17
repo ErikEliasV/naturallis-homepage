@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { DURATION, EASE, MEDIA_QUERY, STAGGER } from "@/constants/motion";
 import { FORMULA_CTA, NAV_LINKS } from "@/constants/navigation";
 import { gsap, useGSAP } from "@/lib/gsap";
+import { isCurrentPath } from "@/utils/path";
 
 export const MOBILE_MENU_ID = "mobile-menu";
 
@@ -97,7 +98,7 @@ export function MobileMenu({ open, pathname, onClose }: MobileMenuProps) {
               <Link
                 href={link.href}
                 onClick={onClose}
-                aria-current={pathname === link.href ? "page" : undefined}
+                aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
                 data-menu-item
                 className="block font-display text-display-md aria-[current=page]:text-lime"
               >
