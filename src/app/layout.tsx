@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { Header } from "@/components/layout/header";
 import { SITE } from "@/constants/site";
 import { FONT_VARIABLES } from "@/lib/fonts";
 import { SmoothScrollProvider } from "@/lib/lenis/smooth-scroll-provider";
@@ -26,7 +27,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="pt-BR" className={`${FONT_VARIABLES} antialiased`}>
       <body className="flex min-h-dvh flex-col bg-white font-sans text-ink">
-        <SmoothScrollProvider>{children}</SmoothScrollProvider>
+        <SmoothScrollProvider>
+          <Header />
+          {children}
+        </SmoothScrollProvider>
       </body>
     </html>
   );
