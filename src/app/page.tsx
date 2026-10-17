@@ -1,4 +1,5 @@
 import { HomeCare } from "@/components/sections/home/home-care";
+import { HomeCategories } from "@/components/sections/home/home-categories";
 import { HomeHero } from "@/components/sections/home/home-hero";
 import { HomeIngredients } from "@/components/sections/home/home-ingredients";
 import { HomeProducts } from "@/components/sections/home/home-products";
@@ -12,6 +13,7 @@ export default function HomePage() {
       <HomeSkinLine />
       <HomeCare />
       <HomeIngredients />
+      <HomeCategories />
     </main>
   );
 }
