@@ -19,6 +19,7 @@ import {
 import { CartButton } from "@/features/cart/components/cart-button";
 import { gsap, ScrollTrigger, useGSAP } from "@/lib/gsap";
 import { cn } from "@/utils/cn";
+import { isCurrentPath, normalizePath } from "@/utils/path";
 
 import { Container } from "./container";
 import { Logo } from "./logo";
@@ -37,7 +38,7 @@ export function Header() {
   const pathname = usePathname();
   const headerRef = useRef<HTMLElement>(null);
   const [menuOpen, setMenuOpen] = useState(false);
-  const isHome = pathname === "/";
+  const isHome = normalizePath(pathname) === "/";
 
   const closeMenu = useCallback(() => setMenuOpen(false), []);
   const toggleMenu = useCallback(() => setMenuOpen((open) => !open), []);
@@ -165,7 +166,7 @@ export function Header() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    aria-current={pathname === link.href ? "page" : undefined}
+                    aria-current={isCurrentPath(pathname, link.href) ? "page" : undefined}
                     className="whitespace-nowrap transition-opacity duration-300 ease-power3-out hover:opacity-60"
                   >
                     {link.label}
