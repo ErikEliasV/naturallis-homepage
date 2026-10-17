@@ -1,6 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-import { type ReactNode } from "react";
 
 import { HealthCta } from "@/components/sections/health-cta";
 import { CATEGORIES, categoryHref, FOOTER_CATEGORY_SLUGS } from "@/constants/categories";
@@ -10,51 +8,11 @@ import { SITE } from "@/constants/site";
 import { Reveal } from "@/features/motion/components/reveal";
 
 import { Container } from "./container";
+import { FooterColumn } from "./footer-column";
 
 const FOOTER_CATEGORIES: readonly NavLink[] = CATEGORIES.filter((category) =>
   FOOTER_CATEGORY_SLUGS.includes(category.slug),
 ).map((category) => ({ label: category.name, href: categoryHref(category.slug) }));
-
-const LINK_CLASS = "transition-opacity duration-300 ease-power3-out hover:opacity-60";
-
-type FooterColumnProps = {
-  title: string;
-  links: readonly NavLink[];
-  children?: ReactNode;
-};
-
-function FooterColumn({ title, links, children }: FooterColumnProps) {
-  return (
-    <div className="flex flex-col gap-6">
-      <h3 className="font-display font-medium">{title}</h3>
-      <ul className="flex flex-col gap-4">
-        {links.map((link) => {
-          const external = /^(https?:|mailto:)/.test(link.href);
-          return (
-            <li key={link.href}>
-              {external ? (
-                <a
-                  href={link.href}
-                  className={LINK_CLASS}
-                  {...(link.href.startsWith("http")
-                    ? { target: "_blank", rel: "noopener noreferrer" }
-                    : {})}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link href={link.href} className={LINK_CLASS}>
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          );
-        })}
-        {children}
-      </ul>
-    </div>
-  );
-}
 
 /** Global footer: health CTA, oversized wordmark and link columns. */
 export function Footer() {
