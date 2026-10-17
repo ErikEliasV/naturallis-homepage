@@ -22,6 +22,14 @@ Site institucional e vitrine da Naturallis: fórmulas manipuladas, suplementos e
 | `npm run format`    | Formata o projeto com Prettier        |
 | `npm run check`     | Lint, tipos e formatação em sequência |
 
+## Variáveis de ambiente
+
+| Variável               | Uso                                                            |
+| ---------------------- | -------------------------------------------------------------- |
+| `NEXT_PUBLIC_SITE_URL` | Domínio público (URLs canônicas, sitemap, robots e Open Graph) |
+
+Sem ela, o site usa `http://localhost:3000`.
+
 ## Estrutura
 
 ```
