@@ -9,6 +9,9 @@ function findCategory(slug: string) {
   return CATEGORIES.find((category) => category.slug === slug);
 }
 
+/** Only the generated pages exist in the static export. */
+export const dynamicParams = false;
+
 export function generateStaticParams() {
   return CATEGORIES.map((category) => ({ categoria: category.slug }));
 }

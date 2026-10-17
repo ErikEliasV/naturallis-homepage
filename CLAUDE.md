@@ -167,6 +167,7 @@ O arquivo não tem variáveis: os tokens de `src/styles/globals.css` foram extra
 - Carrinho no `localStorage`; checkout, formulários e pedidos seguem pelo WhatsApp (sem backend).
 - Dados provisórios a substituir: contatos e CNPJ (`src/constants/contact.ts`), catálogo e preços (`src/constants/products.ts`).
 - `NEXT_PUBLIC_SITE_URL` define o domínio usado em metadata, sitemap e Open Graph.
+- Deploy no GitHub Pages: exportação estática (`output: "export"`, `trailingSlash: true`) com `NEXT_PUBLIC_BASE_PATH`. Imagens passam pelo loader `src/lib/image-loader.ts`, que adiciona o base path. URLs montadas à mão usam `src/utils/base-path.ts`. `cacheComponents` fica desligado, porque é incompatível com as rotas `force-static` exigidas pelo export.
 
 ### Ambiente
 

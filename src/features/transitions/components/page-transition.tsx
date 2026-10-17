@@ -7,6 +7,7 @@ import { useEffect, useEffectEvent, useRef } from "react";
 import { Logo } from "@/components/layout/logo";
 import { DURATION, EASE, MEDIA_QUERY } from "@/constants/motion";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
+import { stripBasePath } from "@/utils/base-path";
 
 import { setPageReady } from "../page-ready";
 
@@ -92,7 +93,7 @@ export function PageTransition() {
           duration: reduced ? 0 : DURATION.enter,
           ease: EASE.inOut,
           onComplete: () => {
-            router.push(url.pathname + url.search, { scroll: false });
+            router.push(stripBasePath(url.pathname) + url.search, { scroll: false });
             timeoutRef.current = window.setTimeout(() => uncover(), COVER_TIMEOUT_MS);
           },
         });

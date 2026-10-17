@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { type Testimonial } from "@/constants/home";
 import { FROSTED_GLASS } from "@/constants/surfaces";
 import { HoverLift } from "@/features/cursor/components/hover-lift";
+import { withBasePath } from "@/utils/base-path";
 import { cn } from "@/utils/cn";
 
 /** Video testimonial card (Figma "VideoCard", 473 × 631) with a frosted caption bar. */
@@ -32,8 +33,8 @@ export function TestimonialCard({ testimonial }: { testimonial: Testimonial }) {
         <>
           <video
             ref={videoRef}
-            src={testimonial.video}
-            poster={testimonial.poster}
+            src={withBasePath(testimonial.video)}
+            poster={withBasePath(testimonial.poster)}
             playsInline
             controls={playing}
             onEnded={() => setPlaying(false)}
