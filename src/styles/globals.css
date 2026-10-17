@@ -65,14 +65,16 @@
   --text-badge--line-height: 1.03;
 
   /* Typography: fixed scale (shop pages: category and product) */
-  --text-serif-xl: 3rem;
-  --text-serif-xl--line-height: 1.2;
-  --text-serif-lg: 1.65rem;
-  --text-serif-lg--line-height: 1.454;
-  --text-serif-md: 1.35rem;
-  --text-serif-md--line-height: 1.555;
-  --text-serif-sm: 1.2rem;
-  --text-serif-sm--line-height: 1.625;
+  --text-heading-xl: 3rem;
+  --text-heading-xl--line-height: 1.2;
+  --text-heading-lg: 1.65rem;
+  --text-heading-lg--line-height: 1.454;
+  --text-heading-md: 1.35rem;
+  --text-heading-md--line-height: 1.555;
+  --text-heading-sm: 1.2rem;
+  --text-heading-sm--line-height: 1.625;
+  --text-body-md: 1rem;
+  --text-body-md--line-height: 1.5;
   --text-body: 0.9375rem;
   --text-body--line-height: 1.6;
   --text-body-sm: 0.875rem;
