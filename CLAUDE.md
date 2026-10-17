@@ -145,3 +145,29 @@ Convenções:
 - Ordem das features: setup inicial → infraestrutura de animação (`feature/smooth-scroll-gsap`) → layout global → as 3 telas do Figma → demais páginas.
 - Ao fim de cada feature, informe em uma ou duas frases o que foi feito.
 - Só pare para perguntar se faltar uma informação essencial.
+
+## 9. Referências do projeto
+
+### Figma
+
+O arquivo também guarda outro projeto (página "ELLE FANNING"). As telas da Naturallis são os três últimos frames:
+
+| Tela      | Node        | Observações                                                                       |
+| --------- | ----------- | --------------------------------------------------------------------------------- |
+| Home      | `2803:3513` | Layout de 1440 ampliado para 1920 (×1,333). Tokens fluidos batem em 1920.         |
+| Categoria | `2803:4136` | Tema base com textos em inglês: conteúdo traduzido para PT-BR e preços em R$.     |
+| Produto   | `2803:4360` | Imagens do frasco "wellina" (outra marca) substituídas pelo frasco da Naturallis. |
+
+O arquivo não tem variáveis: os tokens de `src/styles/globals.css` foram extraídos dos layers. Em frames grandes, `get_design_context` devolve só metadados; leia por seção.
+
+### Decisões
+
+- Fontes: Nohemi (títulos, `.otf` original, sem conversão por causa da licença), SF Pro Display (texto, arquivos enviados pelo usuário; a licença da Apple não cobre uso web, a troca pela Geist é uma linha em `--font-sans`), Geist e Instrument Serif (páginas de loja) e Montserrat (só no rótulo do frasco).
+- O card de produto escala com a própria largura (container queries, base 427px).
+- Carrinho no `localStorage`; checkout, formulários e pedidos seguem pelo WhatsApp (sem backend).
+- Dados provisórios a substituir: contatos e CNPJ (`src/constants/contact.ts`), catálogo e preços (`src/constants/products.ts`).
+- `NEXT_PUBLIC_SITE_URL` define o domínio usado em metadata, sitemap e Open Graph.
+
+### Ambiente
+
+- Se tokens novos do Tailwind não aparecerem no `next dev`, apague `.next/dev` e reinicie (cache do Turbopack). O `next build` gera o CSS corretamente.
