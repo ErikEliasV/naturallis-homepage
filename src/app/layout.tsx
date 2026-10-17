@@ -13,7 +13,8 @@ import { SmoothScrollProvider } from "@/lib/lenis/smooth-scroll-provider";
 import "@/styles/globals.css";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE.url),
+  // Origin only: Next.js adds the base path to metadata file URLs itself.
+  metadataBase: new URL(new URL(SITE.url).origin),
   title: {
     default: `${SITE.name} | ${SITE.tagline}`,
     template: `%s | ${SITE.name}`,
