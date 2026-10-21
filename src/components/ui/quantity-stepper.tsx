@@ -31,7 +31,7 @@ export function QuantityStepper({
   return (
     <div
       className={cn(
-        "flex h-control-shop w-28.75 items-center rounded-pill border border-black/10 bg-white font-geist text-body",
+        "flex h-control-shop w-28.75 items-center rounded-pill border border-black/10 bg-white text-body",
         className,
       )}
     >

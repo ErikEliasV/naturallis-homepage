@@ -103,7 +103,7 @@ export function BeforeAfterSlider({ before, after, className }: BeforeAfterSlide
       <span
         className={cn(
           FROSTED_GLASS,
-          "absolute bottom-5 left-5 rounded-pill px-2.5 py-0.5 font-geist text-caption font-medium text-white capitalize",
+          "absolute bottom-5 left-5 rounded-pill px-2.5 py-0.5 text-caption font-medium text-white capitalize",
         )}
       >
         {before.label}
@@ -111,7 +111,7 @@ export function BeforeAfterSlider({ before, after, className }: BeforeAfterSlide
       <span
         className={cn(
           FROSTED_GLASS,
-          "absolute right-5 bottom-5 rounded-pill px-2.5 py-0.5 font-geist text-caption font-medium text-white capitalize",
+          "absolute right-5 bottom-5 rounded-pill px-2.5 py-0.5 text-caption font-medium text-white capitalize",
         )}
       >
         {after.label}

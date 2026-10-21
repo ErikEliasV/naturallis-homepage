@@ -25,7 +25,7 @@ export function ProductPurchase({ product }: { product: Product }) {
     <div className="flex flex-col gap-6">
       <fieldset>
         <legend className="flex items-baseline gap-1">
-          <span className="font-serif text-heading-sm">Tamanho:</span>
+          <span className="font-display text-heading-sm">Tamanho:</span>
           <span>{selected?.label}</span>
         </legend>
         <div className="mt-3 flex flex-wrap gap-2">

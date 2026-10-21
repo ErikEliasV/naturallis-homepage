@@ -39,16 +39,21 @@ export function HomeCare() {
                 >
                   <HoverLift y={0} scale={1.06} className="absolute inset-0 -z-10">
                     <Image
-                      src="/images/cuidado-farmaceutica.png"
+                      src={pillar.image}
                       alt=""
                       fill
                       sizes="(min-width: 64rem) 20vw, 70vw"
                       className="object-cover"
                     />
                   </HoverLift>
+                  {/* In Figma the background blur fades in with the gradient fill, so the blur gets the same ramp as a mask. */}
                   <div
                     aria-hidden
-                    className="absolute inset-x-0 bottom-0 -z-10 h-[33.7%] bg-linear-to-b from-forest/0 to-forest backdrop-blur-glass"
+                    className="absolute inset-x-0 bottom-0 -z-10 h-[33.7%] mask-t-from-0% backdrop-blur-glass"
+                  />
+                  <div
+                    aria-hidden
+                    className="absolute inset-x-0 bottom-0 -z-10 h-[33.7%] bg-linear-to-b from-forest/0 to-forest"
                   />
                   <h3 className="text-title font-medium">{pillar.title}</h3>
                   <p className="mt-2.5 text-body-lg">{pillar.description}</p>

@@ -15,7 +15,7 @@ type BreadcrumbsProps = {
 /** Trail of links to the current page (Figma "Navigation - breadcrumbs"). */
 export function Breadcrumbs({ items, className }: BreadcrumbsProps) {
   return (
-    <nav aria-label="Trilha de navegação" className={cn("font-geist text-body-sm", className)}>
+    <nav aria-label="Trilha de navegação" className={cn("text-body-sm", className)}>
       <ol className="flex flex-wrap items-center gap-3">
         {items.map((item, index) => (
           <li key={`${item.label}-${index}`} className="flex items-center gap-3">

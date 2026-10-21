@@ -29,7 +29,7 @@ export function CartView() {
   if (lines.length === 0) {
     return (
       <Reveal className="flex flex-col items-start gap-6 rounded-tile bg-surface p-8 md:p-12">
-        <p className="font-serif text-heading-lg">Seu carrinho está vazio.</p>
+        <p className="font-display text-heading-lg">Seu carrinho está vazio.</p>
         <p className="max-w-[40ch] text-black/70">
           Conheça nossos produtos ou fale com a nossa equipe para manipular uma fórmula só sua.
         </p>
@@ -90,7 +90,7 @@ export function CartView() {
         aria-label="Resumo do pedido"
         className="flex flex-col gap-5 rounded-tile bg-surface p-6 lg:sticky lg:top-[calc(var(--spacing-header-space)-2rem)]"
       >
-        <p className="font-serif text-heading-lg">Resumo</p>
+        <p className="font-display text-heading-lg">Resumo</p>
         <dl className="flex flex-col gap-2 border-b border-black/10 pb-5">
           <div className="flex justify-between">
             <dt className="text-black/70">Itens</dt>

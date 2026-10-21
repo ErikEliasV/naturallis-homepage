@@ -27,8 +27,8 @@ export function CategoryBanner({ title, description }: CategoryBannerProps) {
         />
       </Parallax>
       <div aria-hidden className="absolute inset-0 -z-10 bg-black/20" />
-      <div className="max-w-[43.3em] font-geist text-body">
-        <RevealText as="h1" trigger="mount" className="font-serif text-heading-xl">
+      <div className="max-w-[43.3em] text-body">
+        <RevealText as="h1" trigger="mount" className="font-display text-heading-xl">
           {title}
         </RevealText>
         <RevealText as="p" trigger="mount" delay={0.15} className="pt-4">
