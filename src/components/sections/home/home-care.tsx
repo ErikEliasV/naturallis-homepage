@@ -39,7 +39,7 @@ export function HomeCare() {
                 >
                   <HoverLift y={0} scale={1.06} className="absolute inset-0 -z-10">
                     <Image
-                      src="/images/cuidado-farmaceutica.png"
+                      src={pillar.image}
                       alt=""
                       fill
                       sizes="(min-width: 64rem) 20vw, 70vw"

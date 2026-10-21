@@ -17,28 +17,34 @@ export const HERO_STATS: readonly HeroStat[] = [
 export type CarePillar = {
   title: string;
   description: string;
+  image: string;
 };
 
 export const CARE_PILLARS: readonly CarePillar[] = [
   {
     title: "Cuidado individualizado",
     description: "Atenção às necessidades específicas de cada pessoa.",
+    image: "/images/cuidado-farmaceutica.png",
   },
   {
     title: "Qualidade dos ingredientes",
     description: "Seleção criteriosa de matérias-primas e fornecedores.",
+    image: "/images/cuidado-ingredientes.jpg",
   },
   {
     title: "Manipulação responsável",
     description: "Processos conduzidos conforme os requisitos técnicos aplicáveis.",
+    image: "/images/cuidado-manipulacao.jpg",
   },
   {
     title: "Orientação farmacêutica",
     description: "Informação e suporte para esclarecer dúvidas sobre produtos e fórmulas.",
+    image: "/images/cuidado-orientacao.jpg",
   },
   {
     title: "Transparência em cada etapa",
     description: "Informações claras sobre produtos, pedidos e atendimento.",
+    image: "/images/cuidado-transparencia.jpg",
   },
 ];
 
