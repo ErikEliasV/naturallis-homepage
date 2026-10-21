@@ -70,7 +70,7 @@ export function FormulaRequestForm() {
   if (sent) {
     return (
       <div role="status" className="flex flex-col items-start gap-5">
-        <p className="font-serif text-heading-lg">Pedido iniciado no WhatsApp.</p>
+        <p className="font-display text-heading-lg">Pedido iniciado no WhatsApp.</p>
         <p className="text-black/70">
           Continue a conversa por lá e envie a foto da receita, se tiver. Nossa equipe responde em
           horário comercial.
@@ -83,12 +83,7 @@ export function FormulaRequestForm() {
   }
 
   return (
-    <form
-      ref={formRef}
-      noValidate
-      onSubmit={onSubmit}
-      className="flex flex-col gap-5 font-geist text-body"
-    >
+    <form ref={formRef} noValidate onSubmit={onSubmit} className="flex flex-col gap-5 text-body">
       <TextField label="Nome" name="name" autoComplete="name" required error={errors.name} />
       <div className="grid gap-5 sm:grid-cols-2">
         <TextField

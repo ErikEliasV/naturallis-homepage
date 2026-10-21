@@ -64,7 +64,7 @@ export function ContactForm() {
   if (sent) {
     return (
       <div role="status" className="flex flex-col items-start gap-5">
-        <p className="font-serif text-heading-lg">Mensagem pronta no WhatsApp.</p>
+        <p className="font-display text-heading-lg">Mensagem pronta no WhatsApp.</p>
         <p className="text-black/70">Envie por lá e nossa equipe responde em horário comercial.</p>
         <Button variant="ink" size="shop" onClick={() => setSent(false)}>
           Enviar outra mensagem
@@ -74,12 +74,7 @@ export function ContactForm() {
   }
 
   return (
-    <form
-      ref={formRef}
-      noValidate
-      onSubmit={onSubmit}
-      className="flex flex-col gap-5 font-geist text-body"
-    >
+    <form ref={formRef} noValidate onSubmit={onSubmit} className="flex flex-col gap-5 text-body">
       <fieldset>
         <legend className="text-body-sm font-medium">Como podemos ajudar?</legend>
         <div className="mt-2 flex flex-wrap gap-2">

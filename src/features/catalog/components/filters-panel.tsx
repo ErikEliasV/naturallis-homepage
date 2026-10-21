@@ -10,7 +10,7 @@ import { type Product } from "../types";
 import { type Availability, type CollectionFilters, countBy, toggle } from "../utils/collection";
 import { CheckboxList, type Option } from "./checkbox-list";
 
-const FACET_TRIGGER = "pt-6 pb-3 font-serif text-heading-sm";
+const FACET_TRIGGER = "pt-6 pb-3 font-display text-heading-sm";
 const RANGE =
   "pointer-events-none absolute inset-0 w-full appearance-none bg-transparent [&::-moz-range-thumb]:pointer-events-auto [&::-moz-range-thumb]:size-4 [&::-moz-range-thumb]:rounded-pill [&::-moz-range-thumb]:border-0 [&::-moz-range-thumb]:bg-black [&::-webkit-slider-thumb]:pointer-events-auto [&::-webkit-slider-thumb]:size-4 [&::-webkit-slider-thumb]:cursor-grab [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:rounded-pill [&::-webkit-slider-thumb]:bg-black";
 const PRICE_INPUT =
@@ -79,11 +79,11 @@ export function FiltersPanel({
     });
 
   return (
-    <div className="font-geist text-body">
+    <div className="text-body">
       <Accordion
         title="Disponibilidade"
         defaultOpen
-        triggerClassName="pb-3 font-serif text-heading-sm"
+        triggerClassName="pb-3 font-display text-heading-sm"
       >
         <CheckboxList
           options={availabilityOptions}

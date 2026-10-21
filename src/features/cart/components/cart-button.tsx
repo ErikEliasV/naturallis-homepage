@@ -23,7 +23,7 @@ export function CartButton() {
       {count > 0 ? (
         <span
           aria-hidden
-          className="pointer-events-none absolute -top-1.5 -right-1.5 flex h-5 min-w-5 items-center justify-center rounded-pill bg-lime px-1 font-geist text-caption font-medium text-ink"
+          className="pointer-events-none absolute -top-1.5 -right-1.5 flex h-5 min-w-5 items-center justify-center rounded-pill bg-lime px-1 text-caption font-medium text-ink"
         >
           {count > 99 ? "99+" : count}
         </span>

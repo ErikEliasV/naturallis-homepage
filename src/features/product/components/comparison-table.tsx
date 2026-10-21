@@ -18,13 +18,13 @@ export function ComparisonTable({ productName }: { productName: string }) {
           className="grid overflow-hidden rounded-tile bg-white lg:mx-12.5 lg:grid-cols-[432fr_908fr]"
         >
           <div className="flex flex-col gap-4 p-10">
-            <RevealText as="h2" id="comparison-title" className="font-serif text-heading-xl">
+            <RevealText as="h2" id="comparison-title" className="font-display text-heading-xl">
               {COMPARISON.title}
             </RevealText>
-            <p className="font-geist text-body text-black/70">{COMPARISON.description}</p>
+            <p className="text-body text-black/70">{COMPARISON.description}</p>
           </div>
           <div className="overflow-x-auto">
-            <table className="w-full min-w-[40rem] border-collapse font-geist text-body">
+            <table className="w-full min-w-[40rem] border-collapse text-body">
               <thead>
                 <tr>
                   <td className="h-17.5 border-b border-black/10 bg-surface-soft" />
@@ -33,7 +33,7 @@ export function ComparisonTable({ productName }: { productName: string }) {
                       key={column}
                       scope="col"
                       className={cn(
-                        "h-17.5 border-b border-black/10 px-4 text-center font-serif text-heading-sm font-normal",
+                        "h-17.5 border-b border-black/10 px-4 text-center font-display text-heading-sm font-normal",
                         index === 0 && "bg-surface-soft",
                       )}
                     >

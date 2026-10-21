@@ -12,7 +12,7 @@ const TONES: Record<BadgeTone, string> = {
 
 const SIZES: Record<BadgeSize, string> = {
   md: "rounded-badge px-pad-sm py-[0.5em] text-badge",
-  sm: "rounded-pill px-2.5 py-1 font-geist text-caption",
+  sm: "rounded-pill px-2.5 py-1 text-caption",
   /** Inside product cards: scales with the card (container units). */
   card: "rounded-card-badge px-card-badge-x py-card-badge-y text-card-badge",
 };
