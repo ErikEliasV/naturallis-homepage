@@ -56,7 +56,7 @@ export function CartToast() {
     <div
       ref={ref}
       role="status"
-      className="invisible fixed right-gutter bottom-6 z-70 flex max-w-[calc(100vw-2*var(--spacing-gutter))] items-center gap-4 rounded-tile bg-ink p-4 pr-6 font-geist text-body text-white shadow-handle"
+      className="invisible fixed right-gutter bottom-6 z-70 flex max-w-[calc(100vw-2*var(--spacing-gutter))] items-center gap-4 rounded-tile bg-ink p-4 pr-6 text-body text-white shadow-handle"
     >
       {notice ? (
         <>

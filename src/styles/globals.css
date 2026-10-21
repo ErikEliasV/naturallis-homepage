@@ -219,7 +219,5 @@
 @theme inline {
   --font-display: var(--font-nohemi), var(--font-sf-pro), ui-sans-serif, system-ui, sans-serif;
   --font-sans: var(--font-sf-pro), var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
   --font-label: var(--font-montserrat), ui-sans-serif, system-ui, sans-serif;
 }

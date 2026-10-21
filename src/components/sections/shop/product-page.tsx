@@ -23,8 +23,8 @@ import { ProductPurchase } from "@/features/product/components/product-purchase"
 import { ProductShare } from "@/features/product/components/product-share";
 import { formatPrice } from "@/utils/format-price";
 
-const SECTION_TITLE = "font-serif text-heading-lg";
-const ACCORDION_TRIGGER = "py-5 font-serif text-heading-lg";
+const SECTION_TITLE = "font-display text-heading-lg";
+const ACCORDION_TRIGGER = "py-5 font-display text-heading-lg";
 
 function relatedProducts(product: Product): Product[] {
   const sameCategory = PRODUCTS.filter(
@@ -66,7 +66,7 @@ export function ProductPage({ product, category }: ProductPageProps) {
   const related = relatedProducts(product);
 
   return (
-    <main className="flex flex-col pt-header-space font-geist text-body">
+    <main className="flex flex-col pt-header-space text-body">
       <Container
         width="shop"
         className="grid gap-10 pb-section lg:grid-cols-[784fr_656fr] lg:gap-0"
@@ -89,7 +89,7 @@ export function ProductPage({ product, category }: ProductPageProps) {
                 {product.badge === "promo" ? "Promoção" : "Mais Vendidos"}
               </Badge>
             ) : null}
-            <RevealText as="h1" trigger="mount" className="font-serif text-heading-xl">
+            <RevealText as="h1" trigger="mount" className="font-display text-heading-xl">
               {product.name}
             </RevealText>
             <p className="flex flex-wrap items-baseline gap-x-3 text-heading-lg">
@@ -122,7 +122,9 @@ export function ProductPage({ product, category }: ProductPageProps) {
             <div className="flex items-start gap-3">
               <LayeredIcon layers={ICON_STORE} className="size-8" />
               <div className="flex flex-col gap-1">
-                <p className="font-serif text-heading-sm">Retirada disponível na loja Naturallis</p>
+                <p className="font-display text-heading-sm">
+                  Retirada disponível na loja Naturallis
+                </p>
                 <p className="text-black/70">Geralmente fica pronto em 24 horas</p>
               </div>
             </div>
@@ -166,7 +168,7 @@ export function ProductPage({ product, category }: ProductPageProps) {
               defaultOpen
               icon="chevron"
               headingLevel="h2"
-              triggerClassName="pb-5 font-serif text-heading-lg"
+              triggerClassName="pb-5 font-display text-heading-lg"
               contentClassName="pb-5"
             >
               <p className="pb-6">{product.description}</p>

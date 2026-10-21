@@ -4,7 +4,7 @@ import { cn } from "@/utils/cn";
 
 /** Shared look of text inputs (pill) and textareas. */
 export const FIELD_CONTROL =
-  "w-full rounded-pill border border-black/10 bg-white px-5 font-geist text-body text-ink outline-none transition-colors duration-300 ease-power3-out placeholder:text-black/40 focus-visible:border-forest focus-visible:ring-2 focus-visible:ring-forest/20 aria-invalid:border-promo";
+  "w-full rounded-pill border border-black/10 bg-white px-5 text-body text-ink outline-none transition-colors duration-300 ease-power3-out placeholder:text-black/40 focus-visible:border-forest focus-visible:ring-2 focus-visible:ring-forest/20 aria-invalid:border-promo";
 
 export type FieldProps = {
   label: string;
@@ -37,7 +37,7 @@ export function Field({
 
   return (
     <div className={cn("flex flex-col gap-2", className)}>
-      <label htmlFor={controlId} className="font-geist text-body-sm font-medium">
+      <label htmlFor={controlId} className="text-body-sm font-medium">
         {label}
         {required ? <span aria-hidden> *</span> : null}
       </label>
@@ -47,12 +47,12 @@ export function Field({
         "aria-describedby": describedBy,
       })}
       {hint ? (
-        <p id={hintId} className="font-geist text-body-sm text-black/60">
+        <p id={hintId} className="text-body-sm text-black/60">
           {hint}
         </p>
       ) : null}
       {error ? (
-        <p id={errorId} className="font-geist text-body-sm text-promo">
+        <p id={errorId} className="text-body-sm text-promo">
           {error}
         </p>
       ) : null}

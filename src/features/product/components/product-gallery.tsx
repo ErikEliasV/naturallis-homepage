@@ -189,7 +189,7 @@ export function ProductGallery({ product, images }: ProductGalleryProps) {
             type="button"
             data-lightbox-close
             onClick={() => setZoomed(null)}
-            className="absolute top-6 right-6 rounded-pill bg-white px-5 py-2.5 font-geist text-body font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
+            className="absolute top-6 right-6 rounded-pill bg-white px-5 py-2.5 text-body font-medium focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-lime"
           >
             Fechar
           </button>

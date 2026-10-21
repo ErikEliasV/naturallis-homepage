@@ -136,7 +136,7 @@ export function Collection({ products, showCategories = false }: CollectionProps
   );
 
   return (
-    <div className="font-geist text-body">
+    <div className="text-body">
       <div className="flex flex-wrap items-center justify-between gap-4 pb-6">
         <div className="flex items-center gap-6">
           <button
@@ -230,7 +230,7 @@ export function Collection({ products, showCategories = false }: CollectionProps
             style={{ transform: "translateX(-100%)" }}
           >
             <div className="flex items-center justify-between border-b border-black/10 px-gutter py-4">
-              <p className="font-serif text-heading-lg">Filtros</p>
+              <p className="font-display text-heading-lg">Filtros</p>
               <button
                 type="button"
                 onClick={() => setDrawerOpen(false)}
@@ -275,7 +275,7 @@ export function Collection({ products, showCategories = false }: CollectionProps
             </ul>
           ) : (
             <div className="flex flex-col items-start gap-4 rounded-tile bg-surface p-8">
-              <p className="font-serif text-heading-lg">Nenhum produto com esses filtros.</p>
+              <p className="font-display text-heading-lg">Nenhum produto com esses filtros.</p>
               <Button variant="ink" size="shop" onClick={() => setFilters(emptyFilters(ceiling))}>
                 Limpar filtros
               </Button>

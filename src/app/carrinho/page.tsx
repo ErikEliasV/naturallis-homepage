@@ -12,13 +12,13 @@ export const metadata: Metadata = {
 
 export default function CartPage() {
   return (
-    <main className="flex flex-col pt-header-space pb-section font-geist text-body">
+    <main className="flex flex-col pt-header-space pb-section text-body">
       <Container width="shop">
         <Breadcrumbs
           items={[{ label: "Início", href: "/" }, { label: "Carrinho" }]}
           className="py-4"
         />
-        <RevealText as="h1" trigger="mount" className="pt-6 pb-10 font-serif text-heading-xl">
+        <RevealText as="h1" trigger="mount" className="pt-6 pb-10 font-display text-heading-xl">
           Seu carrinho
         </RevealText>
         <CartView />
